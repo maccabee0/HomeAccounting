@@ -1,0 +1,6 @@
+C:\BionicProjects\LearningWPFMVVM\LearningWPFMVVM\HomeAccounting\HomeAccounting.UnitTests\bin\Debug\HomeAccounting.UnitTests.dll.config
+C:\BionicProjects\LearningWPFMVVM\LearningWPFMVVM\HomeAccounting\HomeAccounting.UnitTests\bin\Debug\HomeAccounting.UnitTests.dll
+C:\BionicProjects\LearningWPFMVVM\LearningWPFMVVM\HomeAccounting\HomeAccounting.UnitTests\bin\Debug\HomeAccounting.UnitTests.pdb
+C:\BionicProjects\LearningWPFMVVM\LearningWPFMVVM\HomeAccounting\HomeAccounting.UnitTests\obj\Debug\HomeAccounting.UnitTests.csprojResolveAssemblyReference.cache
+C:\BionicProjects\LearningWPFMVVM\LearningWPFMVVM\HomeAccounting\HomeAccounting.UnitTests\obj\Debug\HomeAccounting.UnitTests.dll
+C:\BionicProjects\LearningWPFMVVM\LearningWPFMVVM\HomeAccounting\HomeAccounting.UnitTests\obj\Debug\HomeAccounting.UnitTests.pdb

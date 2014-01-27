@@ -1,0 +1,13 @@
+﻿<Application x:Class="HomeAccounting.UI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:HomeAccounting.UI.ViewModels"
+             xmlns:l="clr-namespace:HomeAccounting.UI.Converters"
+             StartupUri="Views\MainWindow.xaml">
+    <Application.Resources>
+        <local:TransactionViewModel x:Key="TransactionViewModel"/>
+        <local:MainViewModel x:Key="MainViewModel"/>
+        <local:ExchangeViewModel x:Key="ExchangeViewModel"/>
+        <l:DecimalConverter x:Key="DecimalConverter" />
+    </Application.Resources>
+</Application>
