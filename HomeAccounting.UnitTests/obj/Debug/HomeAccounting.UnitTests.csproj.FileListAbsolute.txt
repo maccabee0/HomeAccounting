@@ -4,3 +4,9 @@ C:\BionicProjects\LearningWPFMVVM\LearningWPFMVVM\HomeAccounting\HomeAccounting.
 C:\BionicProjects\LearningWPFMVVM\LearningWPFMVVM\HomeAccounting\HomeAccounting.UnitTests\obj\Debug\HomeAccounting.UnitTests.csprojResolveAssemblyReference.cache
 C:\BionicProjects\LearningWPFMVVM\LearningWPFMVVM\HomeAccounting\HomeAccounting.UnitTests\obj\Debug\HomeAccounting.UnitTests.dll
 C:\BionicProjects\LearningWPFMVVM\LearningWPFMVVM\HomeAccounting\HomeAccounting.UnitTests\obj\Debug\HomeAccounting.UnitTests.pdb
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UnitTests\bin\Debug\HomeAccounting.UnitTests.dll.config
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UnitTests\bin\Debug\HomeAccounting.UnitTests.dll
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UnitTests\bin\Debug\HomeAccounting.UnitTests.pdb
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UnitTests\obj\Debug\HomeAccounting.UnitTests.csprojResolveAssemblyReference.cache
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UnitTests\obj\Debug\HomeAccounting.UnitTests.dll
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UnitTests\obj\Debug\HomeAccounting.UnitTests.pdb

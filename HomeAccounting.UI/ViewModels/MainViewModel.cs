@@ -45,9 +45,10 @@ namespace HomeAccounting.UI.ViewModels
 
         public MainViewModel()
         {
+            _repository = new HaRepository(DateTime.Now);
             Month = DateTime.Now;
-            _repository = new HaRepository(Month);
-            UpdateViewModel();
+            //_repository.Month = Month;
+            //UpdateViewModel();
             UpdateFlat();
         }
 
@@ -224,7 +225,7 @@ namespace HomeAccounting.UI.ViewModels
             }
         }
 
-        public void UpdateViewModel()
+        private void UpdateViewModel()
         {
             _repository.Month = Month;
             SetTotalsByCategory();
