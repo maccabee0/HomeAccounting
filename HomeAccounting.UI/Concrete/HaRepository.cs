@@ -26,9 +26,9 @@ namespace HomeAccounting.UI.Concrete
             //_monthsExchanges = GetExchangesForMonth(month);
         }
         public DateTime Month { private get; set; }
-        public IEnumerable<Transaction> Transactions { get { return _context.Transactions; } }
-        public IEnumerable<Exchange> Exchanges { get { return _context.Exchanges; } }
-        public IEnumerable<Category> Categories { get { return _context.Categories; } }
+        private IEnumerable<Transaction> Transactions { get { return _context.Transactions.ToList(); } }
+        public IEnumerable<Exchange> Exchanges { get { return _context.Exchanges.ToList(); } }
+        public IEnumerable<Category> Categories { get { return _context.Categories.ToList(); } }
 
         public IEnumerable<Transaction> MonthlyTransactions
         {

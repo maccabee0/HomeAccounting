@@ -14,7 +14,7 @@ namespace HomeAccounting.UI.ViewModels
         public DateTime Date { get; set; }
         public decimal Amount { get; set; }
         public IEnumerable<Category> Categories { get { return Repository.Categories; } }
-        public HaRepository Repository { get; set; }
+        private HaRepository Repository { get; set; }
 
         public TransactionViewModel()
         {
@@ -27,7 +27,7 @@ namespace HomeAccounting.UI.ViewModels
 
         public DelegateCommand SaveCommand { get { return _saveCommand ?? (_saveCommand = new DelegateCommand(param => Save())); } }
 
-        public void Save()
+        private void Save()
         {
             Repository.SaveTransaction(ValidateTransaction());
             OnSave(new TransactionEventArgs());
@@ -38,7 +38,7 @@ namespace HomeAccounting.UI.ViewModels
             return new Transaction { Date = Date, CategoryID = SelectedCategoryId, Amount = Amount };
         }
 
-        protected virtual void OnSave(TransactionEventArgs e)
+        private void OnSave(TransactionEventArgs e)
         {
             var temp = Interlocked.CompareExchange(ref SaveTrans, null, null);
             if(temp != null)
