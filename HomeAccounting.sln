@@ -5,24 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeAccounting.UnitTests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeAccounting.UI", "HomeAccounting.UI\HomeAccounting.UI.csproj", "{5E33E37A-BE33-4CA8-97E7-C3C4F7DC5E62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeAccounting.Domain", "HomeAccounting.Domain\HomeAccounting.Domain.csproj", "{2181FC8B-96EF-402B-8644-02C91DDB6BD7}"
-EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://maccabee.visualstudio.com/defaultcollection
-		SccProjectUniqueName0 = HomeAccounting.UI\\HomeAccounting.UI.csproj
-		SccProjectName0 = HomeAccounting.UI
-		SccLocalPath0 = HomeAccounting.UI
-		SccProjectUniqueName1 = HomeAccounting.UnitTests\\HomeAccounting.UnitTests.csproj
-		SccProjectName1 = HomeAccounting.UnitTests
-		SccLocalPath1 = HomeAccounting.UnitTests
-		SccLocalPath2 = .
-		SccProjectUniqueName3 = HomeAccounting.Domain\\HomeAccounting.Domain.csproj
-		SccProjectName3 = HomeAccounting.Domain
-		SccLocalPath3 = HomeAccounting.Domain
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -36,10 +19,6 @@ Global
 		{5E33E37A-BE33-4CA8-97E7-C3C4F7DC5E62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E33E37A-BE33-4CA8-97E7-C3C4F7DC5E62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E33E37A-BE33-4CA8-97E7-C3C4F7DC5E62}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2181FC8B-96EF-402B-8644-02C91DDB6BD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2181FC8B-96EF-402B-8644-02C91DDB6BD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2181FC8B-96EF-402B-8644-02C91DDB6BD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2181FC8B-96EF-402B-8644-02C91DDB6BD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

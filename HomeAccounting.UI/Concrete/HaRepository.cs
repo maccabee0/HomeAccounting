@@ -51,37 +51,37 @@ namespace HomeAccounting.UI.Concrete
 
         public IEnumerable<Transaction> GetFoodTransactions()
         {
-            return MonthlyTransactions.OrderByDescending(t => t.Date).Where(t => t.Category == GetCategory("Food")).ToList();
+            return MonthlyTransactions.OrderByDescending(t => t.Date).Where(t => t.Category == GetCategory("Food"));
         }
 
         public IEnumerable<Transaction> GetThingsTransactions()
         {
-            return MonthlyTransactions.OrderByDescending(t => t.Date).Where(t => t.Category == GetCategory("Things")).ToList();
+            return MonthlyTransactions.OrderByDescending(t => t.Date).Where(t => t.Category == GetCategory("Things"));
         }
 
         public IEnumerable<Transaction> GetFunTransactions()
         {
-            return MonthlyTransactions.OrderByDescending(t => t.Date).Where(t => t.Category == GetCategory("Fun")).ToList();
+            return MonthlyTransactions.OrderByDescending(t => t.Date).Where(t => t.Category == GetCategory("Fun"));
         }
 
         public IEnumerable<Transaction> GetTransTransactions()
         {
-            return MonthlyTransactions.OrderByDescending(t => t.Date).Where(t => t.Category == GetCategory("Transport")).ToList();
+            return MonthlyTransactions.OrderByDescending(t => t.Date).Where(t => t.Category == GetCategory("Transit"));
         }
 
         public IEnumerable<Transaction> GetFlatTransation()
         {
-            return MonthlyTransactions.OrderByDescending(t => t.Date).Where(t => t.Category == GetCategory("Flat")).ToList();
+            return MonthlyTransactions.OrderByDescending(t => t.Date).Where(t => t.Category == GetCategory("Flat"));
         }
 
         public IEnumerable<Transaction> GetEatOutTransactions()
         {
-            return MonthlyTransactions.OrderByDescending(t => t.Date).Where(t => t.Category == GetCategory("EatOut")).ToList();
+            return MonthlyTransactions.OrderByDescending(t => t.Date).Where(t => t.Category == GetCategory("EatOut"));
         }
 
         private IEnumerable<Exchange> GetExchangesForMonth(DateTime month)
         {
-            return Exchanges.OrderByDescending(t => t.Date).Where(e => e.Date.Month == month.Month && e.Date.Year == month.Year).ToList();
+            return Exchanges.OrderByDescending(t => t.Date).Where(e => e.Date.Month == month.Month && e.Date.Year == month.Year);
         }
 
         public void SaveTransaction(Transaction trans)

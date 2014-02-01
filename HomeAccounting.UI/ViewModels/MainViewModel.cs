@@ -49,7 +49,7 @@ namespace HomeAccounting.UI.ViewModels
             Month = DateTime.Now;
             //_repository.Month = Month;
             //UpdateViewModel();
-            UpdateFlat();
+            //UpdateFlat();
         }
 
         public decimal MonthlyTotal
@@ -235,6 +235,7 @@ namespace HomeAccounting.UI.ViewModels
             UpdateFun();
             UpdateThings();
             UpdateEatOut();
+            UpdateFlat();
             Exchanges = _repository.Exchanges;
         }
 
