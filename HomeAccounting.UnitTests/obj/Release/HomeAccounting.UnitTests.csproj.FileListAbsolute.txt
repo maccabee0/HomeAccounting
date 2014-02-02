@@ -1,0 +1,6 @@
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UnitTests\bin\Release\HomeAccounting.UnitTests.dll.config
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UnitTests\bin\Release\HomeAccounting.UnitTests.dll
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UnitTests\bin\Release\HomeAccounting.UnitTests.pdb
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UnitTests\obj\Release\HomeAccounting.UnitTests.csprojResolveAssemblyReference.cache
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UnitTests\obj\Release\HomeAccounting.UnitTests.dll
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UnitTests\obj\Release\HomeAccounting.UnitTests.pdb
