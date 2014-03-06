@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UI\obj\Release\
+C:\GitRepos\HomeAccounting\HomeAccounting.UI\obj\Release\
 HomeAccounting.UI
 none
 false
 TRACE
-E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UI\App.xaml
+C:\GitRepos\HomeAccounting\HomeAccounting.UI\App.xaml
 4-30630994
 
 251306002227
-20118108289
+20429607284
 Views\ChartWindow.xaml;Views\ExchangeWindow.xaml;Views\MainWindow.xaml;Views\TransactionWindow.xaml;
 
-True
+False
 

@@ -37,7 +37,7 @@ namespace HomeAccounting.UI.Views
 
         private void Cancel(object sender, EventArgs e)
         {
-            Grd1.DataContext = new TransactionViewModel();
+            t.Clear();
             Close();
         }
     }
