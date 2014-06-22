@@ -13,5 +13,7 @@ namespace HomeAccounting.UI.Entities
         public int CategoryID { get; set; }
 
         public string CategoryString { get; set; }
+
+        public ICollection<Transaction> Transactions { get; set; }
     }
 }

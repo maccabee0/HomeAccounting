@@ -35,18 +35,18 @@ namespace HomeAccounting.UI.Views
         {
             var twindow=new TransactionWindow();
             var t = (TransactionViewModel) twindow.Grd1.DataContext;
-            t.SaveTrans += mainViewModel.OnSave;
+            t.SaveTrans += mainViewModel.OnSaveTransaction;
             twindow.ShowDialog();
-            t.SaveTrans -= mainViewModel.OnSave;
+            t.SaveTrans -= mainViewModel.OnSaveTransaction;
         }
 
         private void NewExchange(object sender, ExchangeEventArgs e)
         {
             var ewindow = new ExchangeWindow();
             var x = (ExchangeViewModel)ewindow.Grd1.DataContext;
-            x.SaveExchange += mainViewModel.OnSave;
+            x.SaveExchange += mainViewModel.OnSaveExchange;
             ewindow.ShowDialog();
-            x.SaveExchange -= mainViewModel.OnSave;
+            x.SaveExchange -= mainViewModel.OnSaveExchange;
         }
 
         private void DisplayChart(object sender, EventArgs e)

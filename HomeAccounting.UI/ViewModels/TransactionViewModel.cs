@@ -11,8 +11,10 @@ namespace HomeAccounting.UI.ViewModels
     {
         private DelegateCommand _saveCommand;
         public event EventHandler<TransactionEventArgs> SaveTrans;
+        public int TransID { get; set; }
         public DateTime Date { get; set; }
         public decimal Amount { get; set; }
+        private bool? PaidOnCard;
         public IEnumerable<Category> Categories { get { return Repository.Categories; } }
         private HaRepository Repository { get; set; }
 
@@ -23,19 +25,50 @@ namespace HomeAccounting.UI.ViewModels
             SelectedCategoryId = 1;
         }
 
+        public TransactionViewModel(Transaction transaction)
+        {
+            TransID = transaction.Id;
+            SelectedCategoryId = transaction.CategoryID;
+            Date = transaction.Date;
+            PaidOnCard = transaction.PaidOnCard;
+        }
+
         public int SelectedCategoryId { get; set; }
 
         public DelegateCommand SaveCommand { get { return _saveCommand ?? (_saveCommand = new DelegateCommand(param => Save())); } }
 
         private void Save()
         {
-            Repository.SaveTransaction(ValidateTransaction());
-            OnSave(new TransactionEventArgs());
+            var trans = Repository.SaveTransaction(ValidateTransaction());
+            OnSave(new TransactionEventArgs(trans));
         }
 
         private Transaction ValidateTransaction()
         {
-            return new Transaction { Date = Date, CategoryID = SelectedCategoryId, Amount = Amount };
+            var trans=new Transaction();
+            if (TransID == 0)
+            {
+                if (Amount > 0)
+                    trans = new Transaction {Date = Date, CategoryID = SelectedCategoryId, Amount = Amount};
+            }
+            else
+            {
+                if (Amount > 0)
+                {
+                    trans = new Transaction
+                        {
+                            Id = TransID,
+                            Date = Date,
+                            CategoryID = SelectedCategoryId,
+                            Amount = Amount
+                        };
+                }
+                else
+                {
+                    trans = new Transaction {Id = TransID};
+                }
+            }
+            return trans;
         }
 
         private void OnSave(TransactionEventArgs e)
@@ -45,6 +78,14 @@ namespace HomeAccounting.UI.ViewModels
             {
                 temp(this, e);
             }
+        }
+
+        public void Clear()
+        {
+            TransID = 0;
+            SelectedCategoryId = 1;
+            Date=new DateTime();
+            Amount = 0;
         }
     }
 }
