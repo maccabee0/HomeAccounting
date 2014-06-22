@@ -84,7 +84,7 @@ namespace HomeAccounting.UI.Concrete
             return Exchanges.OrderByDescending(t => t.Date).Where(e => e.Date.Month == month.Month && e.Date.Year == month.Year);
         }
 
-        public void SaveTransaction(Transaction trans)
+        public Transaction SaveTransaction(Transaction trans)
         {
             if (trans.Id == 0)
             {
@@ -95,6 +95,7 @@ namespace HomeAccounting.UI.Concrete
                 _context.Entry(trans).State = EntityState.Modified;
             }
             _context.SaveChanges();
+            return trans;
         }
 
         public void SaveExchange(Exchange exchange)

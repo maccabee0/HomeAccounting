@@ -39,8 +39,8 @@ namespace HomeAccounting.UI.ViewModels
 
         private void Save()
         {
-            Repository.SaveTransaction(ValidateTransaction());
-            OnSave(new TransactionEventArgs());
+            var trans = Repository.SaveTransaction(ValidateTransaction());
+            OnSave(new TransactionEventArgs(trans));
         }
 
         private Transaction ValidateTransaction()
