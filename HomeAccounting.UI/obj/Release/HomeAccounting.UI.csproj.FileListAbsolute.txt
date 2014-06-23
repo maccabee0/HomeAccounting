@@ -78,3 +78,6 @@ C:\GitRepos\HomeAccounting\HomeAccounting.UI\obj\Release\App.baml
 C:\GitRepos\HomeAccounting\HomeAccounting.UI\obj\Release\HomeAccounting.UI.g.resources
 C:\GitRepos\HomeAccounting\HomeAccounting.UI\obj\Release\HomeAccounting.UI.Properties.Resources.resources
 C:\GitRepos\HomeAccounting\HomeAccounting.UI\obj\Release\HomeAccounting.UI.csproj.GenerateResource.Cache
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\bin\Release\HomeAccounting.UI.exe.config
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\obj\Release\HomeAccounting.UI.exe
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\obj\Release\HomeAccounting.UI.pdb
