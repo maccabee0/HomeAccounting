@@ -81,3 +81,5 @@ E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UI\obj\Debug\A
 E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UI\obj\Debug\HomeAccounting.UI.g.resources
 E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UI\obj\Debug\HomeAccounting.UI.Properties.Resources.resources
 E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UI\obj\Debug\HomeAccounting.UI.csproj.GenerateResource.Cache
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UI\obj\Debug\Controls\TransactionsControl.baml
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UI\obj\Debug\Controls\TransactionsControl.g.cs

@@ -8,6 +8,7 @@
         <local:TransactionViewModel x:Key="TransactionViewModel"/>
         <local:MainViewModel x:Key="MainViewModel"/>
         <local:ExchangeViewModel x:Key="ExchangeViewModel"/>
+        <local:CategoryViewModel x:Key="CategoryViewModel"/>
         <l:DecimalConverter x:Key="DecimalConverter" />
     </Application.Resources>
 </Application>

@@ -4,17 +4,30 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\obj\Release\
+=======
+D:\GitRepos\HomeAccounting\HomeAccounting.UI\obj\Release\
+>>>>>>> origin/master
 HomeAccounting.UI
 none
 false
 TRACE
+<<<<<<< HEAD
 C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\App.xaml
 4-30630994
 
 25-763238033
 20-1312139166
 Views\ChartWindow.xaml;Views\ExchangeWindow.xaml;Views\MainWindow.xaml;Views\TransactionWindow.xaml;
+=======
+D:\GitRepos\HomeAccounting\HomeAccounting.UI\App.xaml
+51085974722
+
+27-1409512982
+20-15136343
+Controls\TransactionsControl.xaml;Views\ChartWindow.xaml;Views\ExchangeWindow.xaml;Views\MainWindow.xaml;Views\TransactionWindow.xaml;
+>>>>>>> origin/master
 
 False
 

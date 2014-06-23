@@ -5,8 +5,7 @@ namespace HomeAccounting.UI.Concrete
 {
     public class HaContext : DbContext
     {
-        //TODO: Add Category
-        //TODO: Add Graphic Display Ratio Expences
+        //TODO: Add Category        
         //TODO: Link DB to Cloud (i.e. WinFolder)
         public IDbSet<Transaction> Transactions { get; set; }
         public IDbSet<Exchange> Exchanges { get; set; }
