@@ -8,7 +8,7 @@
             <Setter Property="VerticalAlignment" Value="Stretch"/>
         </Style>
         <DataTemplate x:Key="CategoryTemplate">
-            <Grid Margin="0" VerticalAlignment="Stretch" Width="140">
+            <Grid Margin="0" VerticalAlignment="Stretch" Height="250" Width="140">
                 <Label HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Top" Background="SteelBlue" FontWeight="Bold" Margin="10,10,10,0" Content="{Binding Category}"/>
                 <DataGrid Margin="10,35,10,35" ItemsSource="{Binding Transactions,UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False">
                     <DataGrid.Columns>

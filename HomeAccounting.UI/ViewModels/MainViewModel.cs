@@ -32,7 +32,7 @@ namespace HomeAccounting.UI.ViewModels
         //private IEnumerable<Transaction> _funTransactions;
         //private IEnumerable<Transaction> _transTransactions;
         //private IEnumerable<Transaction> _eatOutTransactions;
-        private IEnumerable<Exchange> _exchanges;
+        //private IEnumerable<Exchange> _exchanges;
         //private IEnumerable<Transaction> _flatTransactions;
         private decimal _dollarsLeft;
         private decimal _grivnyasLeft;
