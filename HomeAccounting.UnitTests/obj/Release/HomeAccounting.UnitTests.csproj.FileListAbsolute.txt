@@ -10,3 +10,9 @@ D:\GitRepos\HomeAccounting\HomeAccounting.UnitTests\bin\Release\HomeAccounting.U
 D:\GitRepos\HomeAccounting\HomeAccounting.UnitTests\obj\Release\HomeAccounting.UnitTests.csprojResolveAssemblyReference.cache
 D:\GitRepos\HomeAccounting\HomeAccounting.UnitTests\obj\Release\HomeAccounting.UnitTests.dll
 D:\GitRepos\HomeAccounting\HomeAccounting.UnitTests\obj\Release\HomeAccounting.UnitTests.pdb
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UnitTests\bin\Release\HomeAccounting.UnitTests.dll.config
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UnitTests\bin\Release\HomeAccounting.UnitTests.dll
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UnitTests\bin\Release\HomeAccounting.UnitTests.pdb
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UnitTests\obj\Release\HomeAccounting.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UnitTests\obj\Release\HomeAccounting.UnitTests.dll
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UnitTests\obj\Release\HomeAccounting.UnitTests.pdb

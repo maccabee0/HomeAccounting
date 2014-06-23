@@ -1,16 +1,21 @@
 ﻿<Window x:Class="HomeAccounting.UI.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:HomeAccounting.UI.ViewModels"
         Title="MainWindow" Height="450" Width="969">
     <Window.Resources>
         <Style TargetType="DataGrid">
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Stretch"/>
         </Style>
-        <DataTemplate x:Key="CategoryTemplate">
+        <DataTemplate x:Key="CategoryTemplate" DataType="{x:Type local:CategoryViewModel}">
             <Grid Margin="0" VerticalAlignment="Stretch" Height="250" Width="140">
                 <Label HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Top" Background="SteelBlue" FontWeight="Bold" Margin="10,10,10,0" Content="{Binding Category}"/>
-                <DataGrid Margin="10,35,10,35" ItemsSource="{Binding Transactions,UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False">
+                <DataGrid Margin="10,35,10,35" ItemsSource="{Binding Transactions,UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" >
+                    <DataGrid.RowStyle>
+                        <Style TargetType="{x:Type DataGridRow}">
+                            <EventSetter Event="PreviewMouseDoubleClick" Handler="Control_OnMouseDoubleClick"/>
+                        </Style>
+                    </DataGrid.RowStyle>
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Date" Width="50" Binding="{Binding Date,StringFormat='d/M/yy'}"></DataGridTextColumn>
                         <DataGridTextColumn Header="Amount" Binding="{Binding Amount, StringFormat=F2}" Width="55"></DataGridTextColumn>
@@ -25,7 +30,7 @@
         <Label HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalAlignment="Top" Background="SteelBlue" FontWeight="Bold" Margin="0,10,100,0">Amount Available This Month</Label>
         <TextBlock HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0" Height="20" Width="60" Text="{Binding Dollars,UpdateSourceTrigger=PropertyChanged, StringFormat=C}"></TextBlock>
         <TextBlock HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,30,10,0" Height="20" Width="60" Text="{Binding Grivnyas,UpdateSourceTrigger=PropertyChanged, StringFormat=F2}"></TextBlock>
-        <ListBox Margin="10,50,140,70" ItemsSource="{Binding CategoryViewModels}" ItemTemplate="{DynamicResource CategoryTemplate}" >
+        <ListBox Margin="10,50,140,70" ItemsSource="{Binding CategoryViewModels}" ItemTemplate="{DynamicResource CategoryTemplate}">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal" Margin="0"/>

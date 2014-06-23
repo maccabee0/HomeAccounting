@@ -1,7 +1,7 @@
 ﻿<Window x:Class="HomeAccounting.UI.Views.TransactionWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="TransactionWindow" Height="200" Width="300">
+        Title="TransactionWindow" Height="200" Width="300" Closed="TransactionWindow_OnClosed">
     <Window.Resources>
         <Style TargetType="Label">
             <Setter Property="HorizontalAlignment" Value="Left"/>

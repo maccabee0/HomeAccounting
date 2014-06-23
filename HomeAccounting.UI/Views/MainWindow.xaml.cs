@@ -33,8 +33,8 @@ namespace HomeAccounting.UI.Views
 
         private void NewTransaction(object sender, TransactionEventArgs e)
         {
-            var twindow=new TransactionWindow();
-            var t = (TransactionViewModel) twindow.Grd1.DataContext;
+            var twindow = e.transaction != null ? new TransactionWindow(e.transaction) : new TransactionWindow();
+            var t = (TransactionViewModel)twindow.Grd1.DataContext;
             t.SaveTrans += mainViewModel.OnSaveTransaction;
             twindow.ShowDialog();
             t.SaveTrans -= mainViewModel.OnSaveTransaction;
@@ -57,7 +57,12 @@ namespace HomeAccounting.UI.Views
 
         private void Control_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show(sender.ToString());
+            //var grid =  sender as DataGrid;
+            //var trans = grid.SelectedItem as Transaction;
+            var row = sender as DataGridRow;
+            var trans = row.Item as Transaction;
+            //MessageBox.Show(trans.ToString());
+            NewTransaction(sender,new TransactionEventArgs(trans));
         }
     }
 }

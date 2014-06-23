@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ namespace HomeAccounting.UI.ViewModels
     public class CategoryViewModel : INotifyPropertyChanged
     {
         private string _category;
-        private IList<Transaction> _transactions;
+        private ObservableCollection<Transaction> _transactions;
         private decimal _total;
 
         public CategoryViewModel(){}
@@ -21,15 +22,19 @@ namespace HomeAccounting.UI.ViewModels
         {
             CategoryId = cat.CategoryID;
             Category = cat.CategoryString;
-            Transactions = cat.Transactions.Where(t => t.Date.Month == date.Month && t.Date.Year == date.Year).ToList();
+            Transactions =
+                new ObservableCollection<Transaction>(
+                    cat.Transactions.Where(t => t.Date.Month == date.Month && t.Date.Year == date.Year)
+                       .OrderByDescending(t => t.Date)
+                       .ToList());
             Total = Transactions.Sum(t => t.Amount);
         }
 
-        public int CategoryId { get; set; }
+        public int CategoryId { get; private set; }
 
         public string Category { get { return _category; } set { _category = value; OnPropertyChanged(); } }
 
-        public IList<Transaction> Transactions { get { return _transactions; } set { _transactions = value; OnPropertyChanged(); } }
+        public ObservableCollection<Transaction> Transactions { get { return _transactions; } set { _transactions = value; OnPropertyChanged(); } }
 
         public decimal Total { get { return _total; } set { _total = value; OnPropertyChanged(); } }
 
