@@ -27,32 +27,15 @@ namespace HomeAccounting.UI.ViewModels
         private decimal _thirdWeekTotal;
         private decimal _fourthWeekTotal;
         private DateTime _month;
-        //private IEnumerable<Transaction> _foodTransactions;
-        //private IEnumerable<Transaction> _thingsTransactions;
-        //private IEnumerable<Transaction> _funTransactions;
-        //private IEnumerable<Transaction> _transTransactions;
-        //private IEnumerable<Transaction> _eatOutTransactions;
-        //private IEnumerable<Exchange> _exchanges;
-        //private IEnumerable<Transaction> _flatTransactions;
         private decimal _dollarsLeft;
         private decimal _grivnyasLeft;
-        //private decimal _foodTotal;
-        //private decimal _transTotal;
-        //private decimal _funTotal;
-        //private decimal _exchangeTotal;
-        //private decimal _eatOutTotal;
-        //private decimal _thingsTotal;
-        //private decimal _flatPayment;
         private HaRepository _repository;
 
         public MainViewModel()
         {
             _repository = new HaRepository(DateTime.Now);
-            Month = DateTime.Now;
-            //_repository.Month = Month;
-            //UpdateViewModel();
-            //UpdateFlat();
             CategoryViewModels = new ObservableCollection<CategoryViewModel>();
+            Month = DateTime.Now;
             SetUpCategories();
         }
 
@@ -99,54 +82,6 @@ namespace HomeAccounting.UI.ViewModels
 
         public ObservableCollection<CategoryViewModel> CategoryViewModels { get; set; }
 
-        //public IEnumerable<Transaction> FoodTransactions
-        //{
-        //    get { return _foodTransactions; }
-        //    set { _foodTransactions = value; OnPropertyChanged(); }
-        //}
-
-        //public IEnumerable<Transaction> ThingsTransactions
-        //{
-        //    get { return _thingsTransactions; }
-        //    set { _thingsTransactions = value; OnPropertyChanged(); }
-        //}
-
-        //public IEnumerable<Transaction> FunTransactions
-        //{
-        //    get { return _funTransactions; }
-        //    set { _funTransactions = value; OnPropertyChanged(); }
-        //}
-
-        //public IEnumerable<Transaction> TransTransactions
-        //{
-        //    get { return _transTransactions; }
-        //    set { _transTransactions = value; OnPropertyChanged(); }
-        //}
-
-        //public IEnumerable<Transaction> EatOutTransactions
-        //{
-        //    get { return _eatOutTransactions; }
-        //    set { _eatOutTransactions = value; OnPropertyChanged(); }
-        //}
-
-        //public IEnumerable<Transaction> FlatTransations
-        //{
-        //    get { return _flatTransactions; }
-        //    set { _flatTransactions = value; OnPropertyChanged(); }
-        //}
-
-        //public IEnumerable<Exchange> Exchanges
-        //{
-        //    get { return _exchanges; }
-        //    set { _exchanges = value; OnPropertyChanged(); }
-        //}
-
-        //public decimal FlatPayment
-        //{
-        //    get { return _flatPayment; }
-        //    set { _flatPayment = value; OnPropertyChanged(); }
-        //}
-
         public decimal Dollars
         {
             get { return _dollarsLeft; }
@@ -159,49 +94,13 @@ namespace HomeAccounting.UI.ViewModels
             set { _grivnyasLeft = value; OnPropertyChanged(); }
         }
 
-        //public decimal FoodTotal
-        //{
-        //    get { return _foodTotal; }
-        //    set { _foodTotal = value; OnPropertyChanged(); }
-        //}
-
-        //public decimal ThingsTotal
-        //{
-        //    get { return _thingsTotal; }
-        //    set { _thingsTotal = value; OnPropertyChanged(); }
-        //}
-
-        //public decimal TransTotal
-        //{
-        //    get { return _transTotal; }
-        //    set { _transTotal = value; OnPropertyChanged(); }
-        //}
-
-        //public decimal FunTotal
-        //{
-        //    get { return _funTotal; }
-        //    set { _funTotal = value; OnPropertyChanged(); }
-        //}
-
-        //public decimal ExchangeTotal
-        //{
-        //    get { return _exchangeTotal; }
-        //    set { _exchangeTotal = value; OnPropertyChanged(); }
-        //}
-
-        //public decimal EatOutTotal
-        //{
-        //    get { return _eatOutTotal; }
-        //    set { _eatOutTotal = value; OnPropertyChanged(); }
-        //}
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if(handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+            var handler = PropertyChanged;
+            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
 
         public DelegateCommand NewTransactionCommand { get { return _newTransactionCommand ?? (_newTransactionCommand = new DelegateCommand(param => NewTransaction(new TransactionEventArgs()))); } }
@@ -211,7 +110,7 @@ namespace HomeAccounting.UI.ViewModels
         protected virtual void NewTransaction(TransactionEventArgs e)
         {
             var temp = Interlocked.CompareExchange(ref Transaction, null, null);
-            if(temp != null)
+            if (temp != null)
             {
                 temp(this, e);
             }
@@ -228,13 +127,13 @@ namespace HomeAccounting.UI.ViewModels
         protected virtual void NewExchange(ExchangeEventArgs e)
         {
             var temp = Interlocked.CompareExchange(ref Exchange, null, null);
-            if(temp != null)
+            if (temp != null)
             {
                 temp(this, e);
             }
         }
 
-        private void AddToCategory(Transaction trans) 
+        private void AddToCategory(Transaction trans)
         {
             CategoryViewModels.FirstOrDefault(c => c.CategoryId == trans.CategoryID).AddToTransactions(trans);
         }
@@ -244,50 +143,16 @@ namespace HomeAccounting.UI.ViewModels
             _repository.Month = Month;
             SetTotalsByCategory();
             UpdateTotals();
-            //UpdateFood();
-            //UpdateTrans();
-            //UpdateFun();
-            //UpdateThings();
-            //UpdateEatOut();
-            //UpdateFlat();
-            //Exchanges = _repository.Exchanges;
+            UpdateCategoryDates(Month);
         }
 
-        //private void UpdateFlat()
-        //{
-        //    FlatTransations = _repository.GetFlatTransation();
-        //    FlatPayment = FlatTransations.Where(t => t.Date.Month == Month.Month).Sum(f => f.Amount);
-        //}
-
-        //private void UpdateEatOut()
-        //{
-        //    EatOutTransactions = _repository.GetEatOutTransactions();
-        //    EatOutTotal = EatOutTransactions.Sum(t => t.Amount);
-        //}
-
-        //private void UpdateThings()
-        //{
-        //    ThingsTransactions = _repository.GetThingsTransactions();
-        //    ThingsTotal = ThingsTransactions.Sum(t => t.Amount);
-        //}
-
-        //private void UpdateFun()
-        //{
-        //    FunTransactions = _repository.GetFunTransactions();
-        //    FunTotal = FunTransactions.Sum(t => t.Amount);
-        //}
-
-        //private void UpdateTrans()
-        //{
-        //    TransTransactions = _repository.GetTransTransactions();
-        //    TransTotal = TransTransactions.Sum(t => t.Amount);
-        //}
-
-        //private void UpdateFood()
-        //{
-        //    FoodTransactions = _repository.GetFoodTransactions();
-        //    FoodTotal = FoodTransactions.Sum(t => t.Amount);
-        //}
+        private void UpdateCategoryDates(DateTime date)
+        {
+            foreach (var cat in CategoryViewModels)
+            {
+                cat.UpdateDate(date);
+            }
+        }
 
         private void UpdateTotals()
         {
@@ -316,7 +181,7 @@ namespace HomeAccounting.UI.ViewModels
         {
             foreach (var cat in _repository.Categories)
             {
-                CategoryViewModels.Add(new CategoryViewModel(cat,Month));
+                CategoryViewModels.Add(new CategoryViewModel(cat, Month));
             }
         }
     }
