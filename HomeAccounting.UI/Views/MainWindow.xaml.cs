@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,12 +59,27 @@ namespace HomeAccounting.UI.Views
 
         private void Control_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            //var grid =  sender as DataGrid;
-            //var trans = grid.SelectedItem as Transaction;
             var row = sender as DataGridRow;
             var trans = row.Item as Transaction;
-            //MessageBox.Show(trans.ToString());
-            NewTransaction(sender,new TransactionEventArgs(trans));
+            NewTransaction(sender, new TransactionEventArgs(trans));
+        }
+
+        private void Transactions_Filter(object sender, FilterEventArgs e)
+        {
+            var date = mainViewModel.Month;
+            var t = e.Item as Transaction;
+            if (t != null)
+            {
+                if (t.Date.Month == date.Month && t.Date.Year == date.Year)
+                {
+                    e.Accepted = true;
+                }
+                else
+                {
+                    e.Accepted = false;
+                }
+            }
+
         }
     }
 }
