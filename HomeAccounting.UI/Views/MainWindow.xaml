@@ -8,9 +8,9 @@
             <Setter Property="VerticalAlignment" Value="Stretch"/>
         </Style>
         <DataTemplate x:Key="CategoryTemplate" DataType="{x:Type local:CategoryViewModel}">
-            <Grid Margin="0" VerticalAlignment="Stretch" Height="250" Width="140">
-                <Label HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Top" Background="SteelBlue" FontWeight="Bold" Margin="10,10,10,0" Content="{Binding Category}"/>
-                <DataGrid Margin="10,35,10,35" ItemsSource="{Binding Transactions,UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" >
+            <Grid Margin="0" VerticalAlignment="Stretch" Width="140" Height="270">
+                <Label HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Top" Background="SteelBlue" FontWeight="Bold" Margin="10,5,10,0" Content="{Binding Category}"/>
+                <DataGrid HorizontalAlignment="Stretch" Margin="10,35,10,35" ItemsSource="{Binding Transactions, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" CanUserAddRows="False">
                     <DataGrid.RowStyle>
                         <Style TargetType="{x:Type DataGridRow}">
                             <EventSetter Event="PreviewMouseDoubleClick" Handler="Control_OnMouseDoubleClick"/>
@@ -33,7 +33,7 @@
         <ListBox Margin="10,50,140,70" ItemsSource="{Binding CategoryViewModels}" ItemTemplate="{DynamicResource CategoryTemplate}">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal" Margin="0"/>
+                    <StackPanel Orientation="Horizontal"/>
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
             <!--<ListBox.ItemTemplate>
