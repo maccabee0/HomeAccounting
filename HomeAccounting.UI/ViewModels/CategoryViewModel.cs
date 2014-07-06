@@ -39,11 +39,19 @@ namespace HomeAccounting.UI.ViewModels
 
         public ObservableCollection<Transaction> Transactions { get { return new ObservableCollection<Transaction>(_transactions.Where(t => t.Date.Month == Date.Month && t.Date.Year == Date.Year)); } set { _transactions = value; OnPropertyChanged(); } }
 
-        //public ICollectionView FiltereredTransactions { get { return new CollectionView(Transactions); } }
+        public ICollectionView FiltereredTransactions { get { return new CollectionView(Transactions); } }
 
         public decimal Total { get { return Transactions.Sum(t => t.Amount); }/* set { _total = value; OnPropertyChanged(); }*/ }
 
-        public DateTime Date { get { return _date; } set { _date = value; OnPropertyChanged(); } }
+        public DateTime Date { 
+            get { return _date; } 
+            set
+            {
+                _date = value; 
+                FiltereredTransactions.Refresh();
+                OnPropertyChanged();
+            } 
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

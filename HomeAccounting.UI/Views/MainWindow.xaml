@@ -9,6 +9,9 @@
         </Style>
         <DataTemplate x:Key="CategoryTemplate" DataType="{x:Type local:CategoryViewModel}">
             <Grid Margin="0" VerticalAlignment="Stretch" Width="140" Height="270">
+                <Grid.Resources>
+                    <!--<CollectionViewSource></CollectionViewSource>-->
+                </Grid.Resources>
                 <Label HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Top" Background="SteelBlue" FontWeight="Bold" Margin="10,5,10,0" Content="{Binding Category}"/>
                 <DataGrid HorizontalAlignment="Stretch" Margin="10,35,10,35" ItemsSource="{Binding Transactions, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" CanUserAddRows="False">
                     <DataGrid.RowStyle>
