@@ -57,11 +57,8 @@ namespace HomeAccounting.UI.Views
 
         private void Control_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            //var grid =  sender as DataGrid;
-            //var trans = grid.SelectedItem as Transaction;
             var row = sender as DataGridRow;
             var trans = row.Item as Transaction;
-            //MessageBox.Show(trans.ToString());
             NewTransaction(sender,new TransactionEventArgs(trans));
         }
     }
