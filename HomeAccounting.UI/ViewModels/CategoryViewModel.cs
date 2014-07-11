@@ -15,6 +15,7 @@ namespace HomeAccounting.UI.ViewModels
         private string _category;
         private ObservableCollection<Transaction> _transactions;
         private decimal _total;
+        private DateTime _date;
 
         public CategoryViewModel(){}
 
@@ -28,6 +29,7 @@ namespace HomeAccounting.UI.ViewModels
                        .OrderByDescending(t => t.Date)
                        .ToList());
             Total = Transactions.Sum(t => t.Amount);
+            Date = date;
         }
 
         public int CategoryId { get; private set; }
@@ -37,6 +39,8 @@ namespace HomeAccounting.UI.ViewModels
         public ObservableCollection<Transaction> Transactions { get { return _transactions; } set { _transactions = value; OnPropertyChanged(); } }
 
         public decimal Total { get { return _total; } set { _total = value; OnPropertyChanged(); } }
+
+        public DateTime Date { get { return _date; } set { _date = value;OnPropertyChanged();} }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -50,6 +54,11 @@ namespace HomeAccounting.UI.ViewModels
         public void AddToTransactions(Transaction transaction) 
         {
             Transactions.Add(transaction);
+        }
+
+        public void UpdateDate(DateTime date)
+        {
+            Date = date;
         }
     }
 }
