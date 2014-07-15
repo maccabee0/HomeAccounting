@@ -61,21 +61,5 @@ namespace HomeAccounting.UI.Views
             var trans = row.Item as Transaction;
             NewTransaction(sender,new TransactionEventArgs(trans));
         }
-
-        private void Transactions_OnFilter(object sender, FilterEventArgs e)
-        {
-            var t = e.Item as Transaction;
-            if (t == null) return;
-            var mDate = mainViewModel.Month;
-            var tDate = t.Date;
-            if (mDate.Month == tDate.Month && mDate.Year == tDate.Year)
-            {
-                e.Accepted = true;
-            }
-            else
-            {
-                e.Accepted = false;
-            }
-        }
     }
 }
