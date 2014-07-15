@@ -163,3 +163,5 @@ C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\obj\Release\A
 C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\obj\Release\HomeAccounting.UI.g.resources
 C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\obj\Release\HomeAccounting.UI.Properties.Resources.resources
 C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\obj\Release\HomeAccounting.UI.csproj.GenerateResource.Cache
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UI\obj\Release\Controls\TransactionsControl.baml
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UI\obj\Release\Controls\TransactionsControl.g.cs

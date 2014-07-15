@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.ComponentModel;
 using System.Windows.Data;
-using System.Reflection;
 
 using HomeAccounting.UI.Entities;
 using HomeAccounting.UI.Annotations;
