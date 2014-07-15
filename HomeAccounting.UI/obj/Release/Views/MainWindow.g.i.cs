@@ -1,9 +1,5 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
 ﻿#pragma checksum "..\..\..\Views\MainWindow.xaml" "{406ea660-64cf-4c82-b6f0-42d48172a799}" "E0C0096054314EEC0D29AC96959DDF3E"
-=======
-﻿#pragma checksum "..\..\..\Views\MainWindow.xaml" "{406ea660-64cf-4c82-b6f0-42d48172a799}" "F7BAFB141B5E21D6D1ADFC00F00EE380"
->>>>>>> parent of 9f8ea44... Filter / Sort Transactions
 =======
 ﻿#pragma checksum "..\..\..\Views\MainWindow.xaml" "{406ea660-64cf-4c82-b6f0-42d48172a799}" "F7BAFB141B5E21D6D1ADFC00F00EE380"
 >>>>>>> parent of 9f8ea44... Filter / Sort Transactions
