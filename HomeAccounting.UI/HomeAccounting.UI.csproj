@@ -57,13 +57,25 @@
     <ApplicationIcon>HAIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Controls.Input.Toolkit">
       <HintPath>..\packages\WPFToolkit.3.5.50211.1\lib\System.Windows.Controls.Input.Toolkit.dll</HintPath>
@@ -92,14 +104,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Bootstrapper.cs" />
     <Compile Include="Commands\DelegateCommand.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
-    <Compile Include="Concrete\HaContext.cs" />
-    <Compile Include="Controls\TransactionsControl.xaml.cs">
-      <DependentUpon>TransactionsControl.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="EventArgs\MyEventArgs.cs" />
     <Compile Include="Converters\DecimalConverter.cs" />
-    <Compile Include="Entities\MyEventArgs.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />
     <Compile Include="ViewModels\ExchangeViewModel.cs" />
     <Compile Include="ViewModels\TransactionViewModel.cs" />
@@ -109,10 +118,6 @@
     <Compile Include="Views\TransactionWindow.xaml.cs">
       <DependentUpon>TransactionWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="Controls\TransactionsControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\ChartWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -129,10 +134,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Concrete\HaRepository.cs" />
-    <Compile Include="Entities\Category.cs" />
-    <Compile Include="Entities\Exchange.cs" />
-    <Compile Include="Entities\Transaction.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\ExchangeWindow.xaml.cs">
@@ -166,7 +167,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -174,7 +177,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -195,6 +200,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="HAIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HomeAccounting.Domain\HomeAccounting.Domain.csproj">
+      <Project>{4ec8822c-ceb1-412c-a46c-73a1e07d5c3c}</Project>
+      <Name>HomeAccounting.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

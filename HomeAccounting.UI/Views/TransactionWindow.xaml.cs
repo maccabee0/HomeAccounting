@@ -1,8 +1,8 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Windows;
 
-using HomeAccounting.UI.Entities;
+using HomeAccounting.Domain.Entities;
+using HomeAccounting.UI.EventArguments;
 using HomeAccounting.UI.ViewModels;
 
 namespace HomeAccounting.UI.Views
@@ -16,7 +16,7 @@ namespace HomeAccounting.UI.Views
         public TransactionWindow()
         {
             InitializeComponent();
-            t = (TransactionViewModel)Grd1.DataContext;
+            t = (TransactionViewModel)DataContext;
             t.SaveTrans += OnSave;
         }
 
