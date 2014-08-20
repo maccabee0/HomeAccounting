@@ -6,10 +6,12 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Collections.ObjectModel;
 
+using HomeAccounting.Domain.Abstract;
 using HomeAccounting.UI.Commands;
-using HomeAccounting.UI.Entities;
+using HomeAccounting.Domain.Entities;
 using HomeAccounting.UI.Annotations;
-using HomeAccounting.UI.Concrete;
+using HomeAccounting.Domain.Concrete;
+using HomeAccounting.UI.EventArguments;
 
 namespace HomeAccounting.UI.ViewModels
 {
@@ -29,11 +31,13 @@ namespace HomeAccounting.UI.ViewModels
         private DateTime _month;
         private decimal _dollarsLeft;
         private decimal _grivnyasLeft;
-        private HaRepository _repository;
+        private IHaRepository _repository;
 
         public MainViewModel()
+        //public MainViewModel(IHaRepository repository)
         {
-            _repository = new HaRepository(DateTime.Now);
+            _repository = new HaRepository();
+            //_repository = repository;
             CategoryViewModels = new ObservableCollection<CategoryViewModel>();
             Month = DateTime.Now;
             SetUpCategories();
@@ -140,7 +144,7 @@ namespace HomeAccounting.UI.ViewModels
 
         private void UpdateViewModel()
         {
-            _repository.Month = Month;
+            //_repository.Month = Month;
             SetTotalsByCategory();
             UpdateTotals();
             UpdateCategoryDates(Month);
@@ -156,11 +160,11 @@ namespace HomeAccounting.UI.ViewModels
 
         private void UpdateTotals()
         {
-            MonthlyTotal = _repository.MonthlyTransactions.Sum(t => t.Amount);
-            FirstWeekTotal = _repository.FirstWeekTotal;
-            SecondWeekTotal = _repository.SecondWeekTotal;
-            ThirdWeekTotal = _repository.ThirdWeekTotal;
-            FourthWeekTotal = _repository.FourthWeekTotal;
+            MonthlyTotal = _repository.MonthlyTransactions(Month).Sum(t => t.Amount);
+            FirstWeekTotal = _repository.FirstWeekTotal(Month);
+            SecondWeekTotal = _repository.SecondWeekTotal(Month);
+            ThirdWeekTotal = _repository.ThirdWeekTotal(Month);
+            FourthWeekTotal = _repository.FourthWeekTotal(Month);
         }
 
         private void SetTotalsByCategory()
@@ -171,7 +175,7 @@ namespace HomeAccounting.UI.ViewModels
             {
                 var id = category.Key;
                 TotalsByCategory.Add(category.Value,
-                                     _repository.MonthlyTransactions
+                                     _repository.MonthlyTransactions(Month)
                                      .Where(t => t.CategoryID == id)
                                                 .Sum(t => t.Amount));
             }

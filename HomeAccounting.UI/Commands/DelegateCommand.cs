@@ -9,7 +9,7 @@ namespace HomeAccounting.UI.Commands
         private Action<object> _execute;
 
         public DelegateCommand(Action<object> execute)
-            :this(execute,null){}
+            : this(execute, null) { }
 
         public DelegateCommand(Action<object> execute, Predicate<object> canExecute)
         {
@@ -33,8 +33,8 @@ namespace HomeAccounting.UI.Commands
 
         public event EventHandler CanExecuteChanged
         {
-            add { CommandManager.RequerySuggested += value; } 
+            add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
-        } 
+        }
     }
 }

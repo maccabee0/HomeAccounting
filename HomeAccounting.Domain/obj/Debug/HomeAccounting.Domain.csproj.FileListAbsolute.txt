@@ -1,0 +1,10 @@
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.Domain\obj\Debug\HomeAccounting.Domain.csprojResolveAssemblyReference.cache
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.Domain\bin\Debug\HomeAccounting.Domain.dll.config
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.Domain\bin\Debug\HomeAccounting.Domain.dll
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.Domain\bin\Debug\HomeAccounting.Domain.pdb
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.Domain\bin\Debug\EntityFramework.dll
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.Domain\bin\Debug\EntityFramework.xml
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.Domain\obj\Debug\HomeAccounting.Domain.dll
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.Domain\obj\Debug\HomeAccounting.Domain.pdb
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.Domain\bin\Debug\EntityFramework.SqlServer.xml

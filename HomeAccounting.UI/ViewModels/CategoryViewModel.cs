@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.ComponentModel;
 using System.Windows.Data;
-using System.Reflection;
 
-using HomeAccounting.UI.Entities;
+using HomeAccounting.Domain.Entities;
 using HomeAccounting.UI.Annotations;
 
 namespace HomeAccounting.UI.ViewModels
@@ -31,13 +29,7 @@ namespace HomeAccounting.UI.ViewModels
                 new ObservableCollection<Transaction>(
                     cat.Transactions.OrderByDescending(t => t.Date)
                        .ToList());
-            //Total = Transactions.Sum(t => t.Amount);
-
             Date = date;
-
-            //FiltereredTransactions =
-            //    CollectionViewSource.GetDefaultView(
-            //        Transactions.Where(t => t.Date.Month == Date.Month && t.Date.Year == Date.Year));
         }
 
         public int CategoryId { get; private set; }
@@ -57,11 +49,11 @@ namespace HomeAccounting.UI.ViewModels
             get
             {
                 return _transactions;
-                //new ObservableCollection<Transaction>(_transactions.Where(t => t.Date.Month == Date.Month && t.Date.Year == Date.Year));
             }
             set
             {
                 _transactions = value;
+                OnPropertyChanged("Total");
                 OnPropertyChanged();
             }
         }
@@ -76,10 +68,7 @@ namespace HomeAccounting.UI.ViewModels
             }
         }
 
-        public decimal Total
-        {
-            get { return Transactions.Where(t => t.Date.Month == Date.Month && t.Date.Year == Date.Year).Sum(t => t.Amount); } /* set { _total = value; OnPropertyChanged(); }*/
-        }
+        public decimal Total { get { return Transactions.Where(t => t.Date.Month == Date.Month && t.Date.Year == Date.Year).Sum(t => t.Amount); } }
 
         private DateTime Date
         {
@@ -87,25 +76,36 @@ namespace HomeAccounting.UI.ViewModels
             set
             {
                 _date = value;
+                OnPropertyChanged("Total");
                 FilteredTransactions.Refresh();
                 OnPropertyChanged();
             }
         }
-        
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
         public virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
+            var handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
 
         public void AddToTransactions(Transaction transaction)
         {
-            var trans = Transactions.FirstOrDefault(t => t.Date < transaction.Date);
-            var index = Transactions.IndexOf(trans);
-            Transactions.Insert(index, transaction);
+            var trans = Transactions.FirstOrDefault(t => t.Id == transaction.Id);
+            if (trans != null)
+            {
+                trans.Amount = transaction.Amount;
+                trans.Date = transaction.Date;
+            }
+            else
+            {
+                trans = Transactions.FirstOrDefault(t => t.Date < transaction.Date);
+                var index = Transactions.IndexOf(trans);
+                Transactions.Insert(index, transaction);
+            }
+            OnPropertyChanged("Total");
             FilteredTransactions.Refresh();
         }
 

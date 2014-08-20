@@ -1,13 +1,16 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading;
 
+using HomeAccounting.Domain.Abstract;
+using HomeAccounting.Domain.Concrete;
 using HomeAccounting.UI.Annotations;
 using HomeAccounting.UI.Commands;
-using HomeAccounting.UI.Concrete;
-using HomeAccounting.UI.Entities;
+using HomeAccounting.Domain.Entities;
+using HomeAccounting.UI.EventArguments;
 
 namespace HomeAccounting.UI.ViewModels
 {
@@ -22,18 +25,22 @@ namespace HomeAccounting.UI.ViewModels
         private decimal _amount;
         private bool? _paidOnCard;
         public IEnumerable<Category> Categories { get { return Repository.Categories; } }
-        private HaRepository Repository { get; set; }
+        private IHaRepository Repository { get; set; }
 
+        //public TransactionViewModel(IHaRepository repository)
         public TransactionViewModel()
         {
+            //Repository = repository;
             Repository = new HaRepository();
             _date = DateTime.Now;
             SelectedCategoryId = 1;
         }
 
         public TransactionViewModel(Transaction transaction)
+        //public TransactionViewModel(Transaction transaction, IHaRepository repository)
         {
             Repository = new HaRepository();
+            //Repository = repository;
             _transId = transaction.Id;
             SelectedCategoryId = transaction.CategoryID;
             _date = transaction.Date;
@@ -50,7 +57,7 @@ namespace HomeAccounting.UI.ViewModels
 
         public bool? PaidOnCard { get { return _paidOnCard; } set { _paidOnCard = value; OnPropertyChanged(); } }
 
-        public DelegateCommand SaveCommand { get { return _saveCommand ?? (_saveCommand = new DelegateCommand(param => Save())); } }
+        public DelegateCommand SaveCommand { get { return _saveCommand ?? (_saveCommand = new DelegateCommand(param => Save(), param => CanSave())); } }
 
         private void Save()
         {
@@ -64,7 +71,9 @@ namespace HomeAccounting.UI.ViewModels
             if (_transId == 0)
             {
                 if (_amount > 0)
-                    trans = new Transaction { Date = _date, CategoryID = SelectedCategoryId, Amount = _amount };
+                {
+                    trans = new Transaction {Date = _date, CategoryID = SelectedCategoryId, Amount = _amount};
+                }
             }
             else
             {
@@ -93,6 +102,11 @@ namespace HomeAccounting.UI.ViewModels
             {
                 temp(this, e);
             }
+        }
+
+        private bool CanSave()
+        {
+            return Amount != 0;
         }
 
         public void Clear()

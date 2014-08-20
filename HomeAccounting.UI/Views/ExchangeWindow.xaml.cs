@@ -1,16 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
 using HomeAccounting.UI.ViewModels;
 
 namespace HomeAccounting.UI.Views
@@ -24,7 +14,7 @@ namespace HomeAccounting.UI.Views
         public ExchangeWindow()
         {
             InitializeComponent();
-            _x = (ExchangeViewModel) Grd1.DataContext;
+            _x = (ExchangeViewModel) DataContext;
             _x.SaveExchange += OnSave;
         }
 
@@ -36,8 +26,12 @@ namespace HomeAccounting.UI.Views
 
         private void Cancel(object sender, EventArgs e)
         {
-            Grd1.DataContext = new ExchangeViewModel();
             Close();
+        }
+
+        private void ExchangeWindow_OnClosed(object sender, EventArgs e)
+        {
+            _x.Clear();
         }
     }
 }

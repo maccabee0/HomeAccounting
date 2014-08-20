@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using HomeAccounting.UI.Entities;
+
+using HomeAccounting.Domain.Entities;
+using HomeAccounting.UI.EventArguments;
 using HomeAccounting.UI.ViewModels;
 
 namespace HomeAccounting.UI.Views
@@ -26,7 +19,7 @@ namespace HomeAccounting.UI.Views
         public MainWindow()
         {
             InitializeComponent();
-            mainViewModel = (MainViewModel)this.Grd1.DataContext;
+            mainViewModel = (MainViewModel)this.DataContext;
             mainViewModel.Transaction += NewTransaction;
             mainViewModel.Exchange += NewExchange;
         }
@@ -34,7 +27,7 @@ namespace HomeAccounting.UI.Views
         private void NewTransaction(object sender, TransactionEventArgs e)
         {
             var twindow = e.transaction != null ? new TransactionWindow(e.transaction) : new TransactionWindow();
-            var t = (TransactionViewModel)twindow.Grd1.DataContext;
+            var t = (TransactionViewModel)twindow.DataContext;
             t.SaveTrans += mainViewModel.OnSaveTransaction;
             twindow.ShowDialog();
             t.SaveTrans -= mainViewModel.OnSaveTransaction;
@@ -43,7 +36,7 @@ namespace HomeAccounting.UI.Views
         private void NewExchange(object sender, ExchangeEventArgs e)
         {
             var ewindow = new ExchangeWindow();
-            var x = (ExchangeViewModel)ewindow.Grd1.DataContext;
+            var x = (ExchangeViewModel)ewindow.DataContext;
             x.SaveExchange += mainViewModel.OnSaveExchange;
             ewindow.ShowDialog();
             x.SaveExchange -= mainViewModel.OnSaveExchange;
@@ -60,22 +53,6 @@ namespace HomeAccounting.UI.Views
             var row = sender as DataGridRow;
             var trans = row.Item as Transaction;
             NewTransaction(sender,new TransactionEventArgs(trans));
-        }
-
-        private void Transactions_OnFilter(object sender, FilterEventArgs e)
-        {
-            var t = e.Item as Transaction;
-            if (t == null) return;
-            var mDate = mainViewModel.Month;
-            var tDate = t.Date;
-            if (mDate.Month == tDate.Month && mDate.Year == tDate.Year)
-            {
-                e.Accepted = true;
-            }
-            else
-            {
-                e.Accepted = false;
-            }
         }
     }
 }

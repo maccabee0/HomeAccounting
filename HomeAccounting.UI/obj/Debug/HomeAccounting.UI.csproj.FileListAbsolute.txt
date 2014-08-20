@@ -106,11 +106,9 @@ C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\bin\Debug\ru\
 C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\obj\Debug\HomeAccounting.UI.csprojResolveAssemblyReference.cache
-C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\obj\Debug\Controls\TransactionsControl.baml
 C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\obj\Debug\Views\ChartWindow.baml
 C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\obj\Debug\Views\ExchangeWindow.baml
 C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\obj\Debug\Views\TransactionWindow.baml
-C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\obj\Debug\Controls\TransactionsControl.g.cs
 C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\obj\Debug\Views\ChartWindow.g.cs
 C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\obj\Debug\Views\ExchangeWindow.g.cs
 C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\obj\Debug\Views\MainWindow.g.cs
@@ -124,3 +122,13 @@ C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\obj\Debug\Vie
 C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\obj\Debug\HomeAccounting.UI.g.resources
 C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\obj\Debug\HomeAccounting.UI.Properties.Resources.resources
 C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\obj\Debug\HomeAccounting.UI.csproj.GenerateResource.Cache
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\bin\Debug\HomeAccounting.Domain.dll
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\bin\Debug\HomeAccounting.Domain.pdb
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\bin\Debug\Microsoft.Practices.Unity.xml
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\bin\Debug\EntityFramework.SqlServer.xml

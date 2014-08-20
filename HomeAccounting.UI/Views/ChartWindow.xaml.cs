@@ -15,7 +15,7 @@ namespace HomeAccounting.UI.Views
             Chart.DataContext = TotalByCategory;
         }
 
-        public Dictionary<string, decimal> TotalByCategory { get; set; }
+        private Dictionary<string, decimal> TotalByCategory { get; set; }
 
         private void Close(object sender, EventArgs e)
         {
