@@ -16,3 +16,9 @@ C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UnitTests\bin\Re
 C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UnitTests\obj\Release\HomeAccounting.UnitTests.csprojResolveAssemblyReference.cache
 C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UnitTests\obj\Release\HomeAccounting.UnitTests.dll
 C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UnitTests\obj\Release\HomeAccounting.UnitTests.pdb
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UnitTests\bin\Release\Microsoft.Practices.Unity.Configuration.dll
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UnitTests\bin\Release\Microsoft.Practices.Unity.dll
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UnitTests\bin\Release\Microsoft.Practices.Unity.RegistrationByConvention.dll
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UnitTests\bin\Release\Microsoft.Practices.Unity.xml
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UnitTests\bin\Release\Microsoft.Practices.Unity.Configuration.xml
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UnitTests\bin\Release\Microsoft.Practices.Unity.RegistrationByConvention.xml

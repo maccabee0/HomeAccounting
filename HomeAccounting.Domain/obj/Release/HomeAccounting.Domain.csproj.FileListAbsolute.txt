@@ -1,0 +1,10 @@
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.Domain\bin\Release\HomeAccounting.Domain.dll.config
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.Domain\bin\Release\HomeAccounting.Domain.dll
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.Domain\bin\Release\HomeAccounting.Domain.pdb
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.Domain\bin\Release\EntityFramework.dll
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.Domain\bin\Release\EntityFramework.SqlServer.dll
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.Domain\bin\Release\EntityFramework.xml
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.Domain\bin\Release\EntityFramework.SqlServer.xml
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.Domain\obj\Release\HomeAccounting.Domain.csprojResolveAssemblyReference.cache
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.Domain\obj\Release\HomeAccounting.Domain.dll
+E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.Domain\obj\Release\HomeAccounting.Domain.pdb

@@ -9,21 +9,12 @@ HomeAccounting.UI
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
 E:\Users\Maccabee\Documents\GitRepo\HomeAccounting\HomeAccounting.UI\App.xaml
-51085974722
-
-271756628617
-20118108289
-Controls\TransactionsControl.xaml;Views\ChartWindow.xaml;Views\ExchangeWindow.xaml;Views\MainWindow.xaml;Views\TransactionWindow.xaml;
-=======
-C:\Users\mbrinda\Documents\GitHub\HomeAccounting\HomeAccounting.UI\App.xaml
 4-30630994
 
-22-2014095769
-241021325247
+2255144491
+24-426287159
 Views\ChartWindow.xaml;Views\ExchangeWindow.xaml;Views\MainWindow.xaml;Views\TransactionWindow.xaml;
->>>>>>> origin/master
 
-False
+True
 
